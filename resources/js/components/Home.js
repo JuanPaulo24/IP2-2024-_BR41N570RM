@@ -6,6 +6,7 @@ export default function Home() {
         <div className="home">
             <NavList />
             <h1>Welcome to Laravel Home</h1>
+            <p>Welcome to this Website!</p>
         </div>
     );
 }
