@@ -1,0 +1,42 @@
+//Navbar background ni
+
+.custom-navbar {
+    background-color: aliceblue; 
+}
+
+.navbar-toggler {
+    border-color: #070340; // Set the border color
+
+    // Change the color of the toggler icon (hamburger)
+    &.navbar-toggler-icon {
+        background-image: none; // Remove default background image
+        &::before {
+            content: ''; // Create a pseudo-element for the first line
+            display: block;
+            width: 25px; // Width of the line
+            height: 3px; // Height of the line
+            background-color: #070340; // Color of the first line
+            position: absolute;
+            top: 7px; // Position it vertically
+            left: 0; // Position it horizontally
+            transition: background-color 0.3s ease; // Add a transition for hover effect
+        }
+        &::after {
+            content: ''; // Create a pseudo-element for the second line
+            display: block;
+            width: 25px; // Width of the line
+            height: 3px; // Height of the line
+            background-color: #070340; // Color of the second line
+            position: absolute;
+            top: 14px; // Position it vertically
+            left: 0; // Position it horizontally
+            transition: background-color 0.3s ease; // Add a transition for hover effect
+        }
+        &:hover {
+            &::before,
+            &::after {
+                background-color: lighten(#070340, 20%); // Change color on hover (lighten)
+            }
+        }
+    }
+}
