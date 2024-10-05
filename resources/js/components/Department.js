@@ -11,12 +11,15 @@ export default function Home() {
             <NavList_Return />
             <br />
             <div className="Dep_List">
-                <label for="Dep_List">This is where departments are listed (PLACEHOLDER)</label> <button>Edit</button> <button>Trsh</button>
+                <label htmlFor="Dep_List">This is where departments are listed (PLACEHOLDER)</label> 
+                <button>Edit</button> 
+                <button>Trash</button>
             </div>
             <br />
-            <input></input>
+            <input type="text" />
             <br /><br />
-            <button>Save</button> <button>Clear</button>
+            <button>Save</button> 
+            <button>Clear</button>
         </div>
     );
 }

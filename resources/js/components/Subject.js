@@ -10,22 +10,25 @@ export default function Home() {
             <h1>Subject</h1>
             <NavList_Return />
             <br />
-            <label for="subject">Subject</label> <br />
-            <input></input> <button>Search</button> <br /><br />
+            <label htmlFor="subject">Subject</label> <br />
+            <input type="text" /> <button>Search</button> <br /><br />
             <div className="sub_list">
-                <label for="sub_list">This is where subjects are listed (PLACEHOLDER)</label> <button>Edit</button> <button>Trash</button>
+                <label htmlFor="sub_list">This is where subjects are listed (PLACEHOLDER)</label> 
+                <button>Edit</button> 
+                <button>Trash</button>
             </div>
             <br />
             <p>Subject Code</p>
-            <input />
+            <input type="text" />
             <br /><br />
             <p>Course Title</p>
-            <input />
+            <input type="text" />
             <br /><br />
             <p>Course Description</p>
-            <input />
+            <input type="text" />
             <br /><br />
-            <button>Save</button> <button>Clear</button>
+            <button>Save</button> 
+            <button>Clear</button>
         </div>
     );
 }

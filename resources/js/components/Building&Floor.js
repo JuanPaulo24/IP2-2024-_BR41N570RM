@@ -10,26 +10,32 @@ export default function Home() {
             <h1>Manage Building</h1>
             <NavList_Return />
             <br />
-            <label for="building">Building</label> <br />
-            <input></input> <button>Search</button> <br /><br />
+            <label htmlFor="building">Building</label> <br />
+            <input type="text" /> <button>Search</button> <br /><br />
             <div className="bldg_list">
-                <label for="bldg_list">This is where buildings are listed (PLACEHOLDER)</label> <button>Edit</button> <button>Trash</button>
+                <label htmlFor="bldg_list">This is where buildings are listed (PLACEHOLDER)</label> 
+                <button>Edit</button> 
+                <button>Trash</button>
             </div>
             <br />
-            <input></input>
+            <input type="text" />
             <br /><br />
-            <button>Save</button> <button>Clear</button>
+            <button>Save</button> 
+            <button>Clear</button>
             <br /><br /><br />
             <h1>Manage Floors</h1>
-            <label for="floors">Floors</label> <br />
-            <input></input> <button>Search</button> <br /><br />
+            <label htmlFor="floors">Floors</label> <br />
+            <input type="text" /> <button>Search</button> <br /><br />
             <div className="floor_list">
-                <label for="floor_list">This is where floors are listed (PLACEHOLDER)</label> <button>Edit</button> <button>Trash</button>
+                <label htmlFor="floor_list">This is where floors are listed (PLACEHOLDER)</label> 
+                <button>Edit</button> 
+                <button>Trash</button>
             </div>
             <br />
-            <input></input>
+            <input type="text" />
             <br /><br />
-            <button>Save</button> <button>Clear</button>
+            <button>Save</button> 
+            <button>Clear</button>
         </div>
     );
 }
