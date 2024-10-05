@@ -1,0 +1,25 @@
+//Navlink animation and effects ni diring dapita
+
+.nav-link {
+    color: #07034c; 
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    font-size: 20px;
+    position: relative;
+    padding: 10px 15px;
+    margin: 0 10px;
+
+    &:hover {
+        color: #fff;
+        background-color: rgba(11, 72, 204, 0.5);
+        border-radius: 5px;
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &.active {
+        color: #fff;
+        background-color: rgba(14, 114, 207, 0.5);
+        border-radius: 5px;
+        transform: scale(1.02);
+    }
+}

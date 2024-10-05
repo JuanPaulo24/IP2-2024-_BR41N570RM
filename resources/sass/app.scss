@@ -7,4 +7,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-//@import './home.scss';  //Asign to this Sample
+// Components
+@import 'home';
+@import 'navlinks';
+@import 'navbar';
+@import 'home_img';
