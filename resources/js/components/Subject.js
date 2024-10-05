@@ -1,14 +1,13 @@
 import React from "react";
-import NavList from "./NavList"; 
-import NavList_Return from "./NavList_Return";
+
+
 
 export default function Home() {
     return (
         <div className="subject">
-            <NavList />
+
             <br />
             <h1>Subject</h1>
-            <NavList_Return />
             <br />
             <label htmlFor="subject">Subject</label> <br />
             <input type="text" /> <button>Search</button> <br /><br />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavList from "./NavList"; 
-import NavList_Return from "./NavList_Return";
+
 
 export default function Home() {
     const [firstName, setFirstName] = useState('');
@@ -23,10 +23,10 @@ export default function Home() {
 
     return (
         <div className="profile">
-            <NavList />
+
             <br />
             <h1>Profile</h1>
-            <NavList_Return />
+   
             <br />
             <form onSubmit={handleSubmit}>
                 <p>First Name</p>

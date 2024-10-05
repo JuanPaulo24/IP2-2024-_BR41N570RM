@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavList from "./NavList"; 
-import NavList_Return from "./NavList_Return";
+
 
 export default function Home() {
     const [building, setBuilding] = useState('');
@@ -9,10 +9,10 @@ export default function Home() {
 
     return (
         <div className="room">
-            <NavList />
+   
             <br />
             <h1>Manage Room</h1>
-            <NavList_Return />
+
             <br />
             <label htmlFor="room">Room</label> <br />
             <input type="text" /> <button>Search</button> <br /><br />
