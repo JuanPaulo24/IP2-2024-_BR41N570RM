@@ -6,7 +6,7 @@ export default function Home() {
         <div className="Home">
             <NavList />
             <h1>1</h1>
-            <p>Welcome to this Website! Thank you for Visiting!</p>
+            <p>Norl</p>
         </div>
     );
 }
