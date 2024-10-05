@@ -1,41 +1,41 @@
-//Navbar background ni
-
 .custom-navbar {
     background-color: aliceblue; 
 }
 
 .navbar-toggler {
-    border-color: #070340; // Set the border color
+    border-color: #070340;
 
-    // Change the color of the toggler icon (hamburger)
     &.navbar-toggler-icon {
-        background-image: none; // Remove default background image
+        background-image: none;
+
         &::before {
-            content: ''; // Create a pseudo-element for the first line
+            content: '';
             display: block;
-            width: 25px; // Width of the line
-            height: 3px; // Height of the line
-            background-color: #070340; // Color of the first line
+            width: 25px;
+            height: 3px;
+            background-color: #070340;
             position: absolute;
-            top: 7px; // Position it vertically
-            left: 0; // Position it horizontally
-            transition: background-color 0.3s ease; // Add a transition for hover effect
+            top: 7px;
+            left: 0;
+            transition: background-color 0.3s ease;
         }
+        
         &::after {
-            content: ''; // Create a pseudo-element for the second line
+            content: '';
             display: block;
-            width: 25px; // Width of the line
-            height: 3px; // Height of the line
-            background-color: #070340; // Color of the second line
+            width: 25px;
+            height: 3px;
+            background-color: #070340;
             position: absolute;
-            top: 14px; // Position it vertically
-            left: 0; // Position it horizontally
-            transition: background-color 0.3s ease; // Add a transition for hover effect
+            top: 14px;
+            left: 0;
+            transition: background-color 0.3s ease;
         }
+        
         &:hover {
             &::before,
             &::after {
-                background-color: lighten(#070340, 20%); // Change color on hover (lighten)
+                background-color: lighten(#070340, 20%);
             }
         }
     }

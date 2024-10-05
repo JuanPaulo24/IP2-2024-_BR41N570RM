@@ -25,13 +25,18 @@ export default function NavList() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/programs">
-                                Programs
+                            <Link className="nav-link" to="/academics">
+                                Academics
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/contacts">
                                 Contacts
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/news-updates">
+                                News & Updates
                             </Link>
                         </li>
                     </ul>
