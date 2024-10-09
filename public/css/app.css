@@ -12024,6 +12024,24 @@ textarea.form-control-lg {
   background-color: #1208a1;
 }
 
+.navbar-nav .nav-link.dropdown-toggle {
+  color: #0d6efd !important;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  color: #0d6efd;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+  background-color: #0d6efd;
+  color: white !important;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:focus {
+  background-color: #0d6efd;
+  color: white !important;
+}
+
 .d-flex {
   display: flex;
   flex-wrap: wrap;
@@ -12129,4 +12147,40 @@ textarea.form-control-lg {
 }
 .modal .text-success {
   margin-top: 10px;
+}
+
+.buildingmanager {
+  background-color: aqua;
+}
+
+.admin-profile-content .profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.admin-profile-content .profile-header img {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.admin-profile-content .profile-header .profile-info h3, .admin-profile-content .profile-header .profile-info .h3 {
+  margin: 0;
+}
+.admin-profile-content .profile-header .profile-info p {
+  margin: 0;
+  color: gray;
+}
+.admin-profile-content .contact-info, .admin-profile-content .project-status {
+  margin-bottom: 20px;
+}
+.admin-profile-content .contact-info .info-item, .admin-profile-content .project-status .info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.admin-profile-content .contact-info .info-item i, .admin-profile-content .project-status .info-item i {
+  margin-right: 10px;
+}
+.admin-profile-content .progress {
+  height: 20px;
+  margin-bottom: 10px;
 }

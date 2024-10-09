@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Father Saturnino Urios University</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="icon" type="image/svg+xml" href="/../images/fsuu-icon-01.svg">
 </head>
 <body>
-    <div id="root">
+    <div id="app">
     </div>
-
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}" defer></script> 
 </body>
 </html>

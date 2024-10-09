@@ -7,8 +7,17 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// Components
+// Landing Page Components
 @import 'navlinks';
 @import 'navbar';
+
+
+// Sign-In Components
 @import 'loginpage';
 @import 'resetpass';
+
+// Admin Dashboard Components
+@import 'admindashboard';
+@import 'buildingmanager';
+@import 'dashlist';
+@import 'adminprofile';

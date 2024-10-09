@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/{any?}', function () {
     return view('welcome');
 })->where('any', '^(?!api).*$');
+
+
+
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::post('/login', 'Auth\LoginController@login'); // Adjust based on your authentication setup

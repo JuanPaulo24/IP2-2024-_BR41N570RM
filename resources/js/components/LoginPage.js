@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import fsuuIcon from '/../images/fsuu-icon-01.svg'; 
 import fsuuBackground1 from '/../images/fsuu-intro-01.svg'; 
 import fsuuBackground2 from '/../images/fsuu-intro-02.svg'; 
@@ -18,22 +19,19 @@ function LoginPage() {
     const PRIMARY_COLOR = '#070340'; 
     const [fadeIn, setFadeIn] = useState(false); 
     const [showPassword, setShowPassword] = useState(false); 
-    const [roleSelected, setRoleSelected] = useState(false); 
     const [modalVisible, setModalVisible] = useState(false); 
     const [remindMe, setRemindMe] = useState(false); 
     const [formValues, handleInputChange] = useForm({
         username: '',
         password: '',
-        role: '',
     });
 
-    const { username, password, role } = formValues;
+    const { username, password } = formValues;
 
     const handleLogin = (e) => {
         e.preventDefault();
         console.log('Username:', username);
         console.log('Password:', password);
-        console.log('Role:', role);
         console.log('Remind Me:', remindMe);
     };
 
@@ -43,12 +41,6 @@ function LoginPage() {
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
-    };
-
-    const handleRoleChange = (e) => {
-        const selectedRole = e.target.value;
-        handleInputChange(e); 
-        setRoleSelected(selectedRole !== '');
     };
 
     const toggleModal = () => {
@@ -92,63 +84,43 @@ function LoginPage() {
                     <p className="text-center mb-4" style={{ color: PRIMARY_COLOR }}>To Father Saturnino Urios University</p>
                     <form onSubmit={handleLogin}>
                         <div className="mb-3">
-                            <label htmlFor="role" className="form-label" style={{ color: PRIMARY_COLOR }} >Login as:</label>
-                            <select 
-                                className="form-select form-select-lg"
-                                id="role"
-                                name="role"
-                                value={role} 
-                                onChange={handleRoleChange}
-                                required 
-                            >
-                                <option value="">Select role</option> 
-                                <option value="student">Student</option>
-                                <option value="faculty">Faculty</option>
-                                <option value="administrator">Administrator</option>
-                            </select>
+                            <input 
+                                type="text" 
+                                className="form-control form-control-lg"
+                                id="username"
+                                name="username"
+                                value={username} 
+                                onChange={handleInputChange} 
+                                placeholder="Enter your username"
+                                required
+                            />
                         </div>
-                        {role && (
-                            <>
-                                <div className="mb-3">
-                                    <input 
-                                        type="text" 
-                                        className="form-control form-control-lg"
-                                        id="username"
-                                        name="username"
-                                        value={username} 
-                                        onChange={handleInputChange} 
-                                        placeholder="Enter your username"
-                                        required
-                                    />
-                                </div>
-                                <div className="mb-3">
-                                    <div className="input-group">
-                                        <input 
-                                            type={showPassword ? "text" : "password"}
-                                            className="form-control form-control-lg"
-                                            id="password"
-                                            name="password"
-                                            value={password} 
-                                            onChange={handleInputChange} 
-                                            placeholder="Enter your password"
-                                            required
-                                        />
-                                        <button
-                                            type="button"
-                                            className="btn btn-outline-secondary btn-lg"
-                                            style={{
-                                                height: 'calc(1.85em + 0.75rem + 1px)', 
-                                                borderTopLeftRadius: '0',
-                                                borderBottomLeftRadius: '0',
-                                            }}
-                                            onClick={togglePasswordVisibility}
-                                        >
-                                            {showPassword ? "Hide" : "Show"}
-                                        </button>
-                                    </div>
-                                </div>
-                            </>
-                        )}
+                        <div className="mb-3">
+                            <div className="input-group">
+                                <input 
+                                    type={showPassword ? "text" : "password"}
+                                    className="form-control form-control-lg"
+                                    id="password"
+                                    name="password"
+                                    value={password} 
+                                    onChange={handleInputChange} 
+                                    placeholder="Enter your password"
+                                    required
+                                />
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-secondary btn-lg"
+                                    style={{
+                                        height: 'calc(1.85em + 0.75rem + 1px)', 
+                                        borderTopLeftRadius: '0',
+                                        borderBottomLeftRadius: '0',
+                                    }}
+                                    onClick={togglePasswordVisibility}
+                                >
+                                    {showPassword ? "Hide" : "Show"}
+                                </button>
+                            </div>
+                        </div>
                         <div className="form-check mb-3">
                             <input 
                                 type="checkbox" 
@@ -174,7 +146,6 @@ function LoginPage() {
                                 borderRadius: '25px', 
                                 color: '#fff', 
                             }}
-                            disabled={!roleSelected} 
                         >
                             Login
                         </button>
@@ -208,3 +179,7 @@ function LoginPage() {
 }
 
 export default LoginPage;
+
+if (document.getElementById('app')) {
+    ReactDOM.render(<LoginPage />, document.getElementById('app'));
+}

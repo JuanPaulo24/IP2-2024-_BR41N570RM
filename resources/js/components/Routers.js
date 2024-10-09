@@ -6,9 +6,10 @@ import About from "./About";
 import Academics from "./Academics";
 import Contacts from "./Contacts";
 import NewsUpdates from "./NewsUpdates";
-import LoginRouter from "./LoginRouter"; 
+import LoginRouters from "./LoginRouters";
+import DashRouters from "./DashRouters";  // Import DashRouters
 
-export default function Routers() {
+export default function LandingRouters() {
     return (
         <Router>
             <Routes>
@@ -17,12 +18,13 @@ export default function Routers() {
                 <Route path="/academics" element={<Academics />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/news-updates" element={<NewsUpdates />} />
-                <Route path="/*" element={<LoginRouter />} />
+                <Route path="/*" element={<LoginRouters />} />  // Use a different path for LoginRouters
+                <Route path="/admin/*" element={<DashRouters />} />  // Use a different path for DashRouters
             </Routes>
         </Router>
     );
 }
 
 if (document.getElementById('root')) {
-    ReactDOM.render(<Routers />, document.getElementById('root'));
+    ReactDOM.render(<LandingRouters />, document.getElementById('root'));
 }

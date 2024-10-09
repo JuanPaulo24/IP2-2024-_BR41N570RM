@@ -40,3 +40,21 @@
         }
     }
 }
+
+.navbar-nav .nav-link.dropdown-toggle {
+    color: #0d6efd !important; // Base color
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: #0d6efd; // Default text color
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: #0d6efd; // Background color on hover
+    color: white !important; // Text color on hover
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:focus {
+    background-color: #0d6efd; // Background color when focused
+    color: white !important; // Text color when focused
+}
