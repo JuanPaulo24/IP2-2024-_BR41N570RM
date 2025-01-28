@@ -1,12 +1,24 @@
 import React from "react";
-import NavList from "./NavList"; 
+import JobCards from "./JobCards";
 
 export default function Home() {
     return (
-        <div className="demo">
-            <NavList />
-            <h1>Welcome to Laravel Home</h1>
-            <p>Welcome to this Website! Thank you for Visiting!</p>
+        <div className="demo" style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh" ,
+            backgroundColor: "#EFFAFA",
+            position: "relative"
+        }}>
+            <header style={{
+                backgroundColor: "#63BABA",
+                height: "15vh",
+                position: "absolute",
+                top: "0",
+                width: "100vw"
+            }}></header>
+            <JobCards/>
         </div>
     );
 }
