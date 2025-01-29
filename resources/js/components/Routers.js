@@ -3,16 +3,14 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
-import Demo from "./Demo";
-import JobCards  from "./JobCards";
+import Index from "./Index";
 
 
 export default function Routers() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Demo />} />
-                <Route path="/jobcard" element={<JobCards/>} />
+                <Route path="/" element={<Index />} />
             </Routes>
         </Router>
     );

@@ -57,7 +57,7 @@ const AddButton = ({ onClick }) => (
     </Button>
 );
 
-// Sub-component for individual job cards
+// Single JobCard component definition
 const JobCard = ({ job, onEdit, onDelete }) => (
     <StyledCard>
         <div style={{
@@ -66,9 +66,14 @@ const JobCard = ({ job, onEdit, onDelete }) => (
             alignItems: "center",
             padding: "1rem"
         }}>
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 <h3 style={titleStyle}>{job.title}</h3>
-                <span style={salaryStyle}>{job.salary}</span>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                    <span style={salaryStyle}>{job.salary}</span>
+                    <h4 style={{ margin: 0, fontSize: "0.9rem", fontWeight: 500 }}>
+                        {job.employer?.name}
+                    </h4>
+                </div>
             </div>
             <Space>
                 <Button
@@ -121,7 +126,6 @@ function JobCards() {
             onOk: () => deleteJob(jobId)
         });
     };
-
     const handleAddJob = (newJob) => {
         addJob(newJob);
         setIsAddModalVisible(false);
@@ -146,7 +150,10 @@ function JobCards() {
                 open={!!editingJob}
                 onCancel={() => setEditingJob(null)}
                 onOk={editJob}
-                initialValues={editingJob}
+                initialValues={editingJob ? {
+                    ...editingJob,
+                    employer_id: editingJob.employer?.id // Correctly pass employer_id
+                } : null}
             />
 
             <AddJobModal

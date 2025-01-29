@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\JobPosted;
 use Illuminate\Http\Request;
 use App\Models\Job;
+use Illuminate\Support\Facades\Mail;
 
 class JobController extends Controller
 {
@@ -14,13 +16,12 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::latest()->get();
+        $jobs = Job::with('employer')->latest()->get();
 
         return response()->json([
             'jobs' => $jobs
         ]);
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -37,7 +38,7 @@ class JobController extends Controller
             'salary' => ['required']
         ]);
 
-        Job::create([
+        $job = Job::create([
             'title' => request('title'),
             'salary' => request('salary'),
         ]);
@@ -53,6 +54,7 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
+        $job->load('employer');
         return response()->json([
             'job' => $job,
         ]);
@@ -67,22 +69,21 @@ class JobController extends Controller
      */
     public function update(Job $job)
     {
-        // Validate the request
         request()->validate([
             'title'  => ['required', 'min:3'],
-            'salary' => ['required']
+            'salary' => ['required'],
+            'employer_id' => ['exists:employers,id']
         ]);
 
-        // Perform the update
         $job->update([
             'title'  => request('title'),
-            'salary' => request('salary')
+            'salary' => request('salary'),
+            'employer_id' => request('employer_id')
         ]);
 
-        // Return a JSON response
         return response()->json([
             'message' => 'Job updated successfully!',
-            'job'     => $job
+            'job'     => $job->load('employer')
         ], 200);
     }
 

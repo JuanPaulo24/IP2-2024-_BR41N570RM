@@ -12,9 +12,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Job extends Model {
     use HasFactory;
 
-    protected $table = 'job_listings';
-   // protected $fillable = ['employer_id','title', 'salary'];
-   protected $guarded = [];
 
+    protected $table = 'job_listings';
+    // protected $fillable = ['employer_id','title', 'salary'];
+    protected $guarded = [];
+
+
+
+    public function employer() {
+        /*To test it using php artisan tinker you can try assign $job = App\Models\Job::first(), then $job-> employer or $job -> employer -> name to show their relationship. */
+        return $this->belongsTo(Employer::class);
+    }
 
 }
